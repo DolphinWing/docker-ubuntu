@@ -2,11 +2,17 @@
 
 CPATH=/opt/tools #`pwd`
 
-if [ "$1" == "root"]; then
-    chmod 644 $CPATH/docker-prompt
-    chmod 644 $CPATH/.vimrc
-    chmod 644 $CPATH/.inputrc
+if [ "$1" == "user" ]; then
+    echo "I'm a user!"
+    prepfix="echo '123456' | sudo -S"
+else #root
+    echo "I'm root!"
+    #chmod 664 $CPATH/docker-prompt
+    #chmod 664 $CPATH/.vimrc
+    #chmod 664 $CPATH/.inputrc
+    prefix=
 fi
 
-cp $CPATH/.vimrc ~/
-cp $CPATH/.inputrc ~/
+${prefix} cp $CPATH/.vimrc ~/
+${prefix} cp $CPATH/.inputrc ~/
+
