@@ -15,7 +15,7 @@ RUN /opt/tools/env-setup.sh root
 RUN groupadd user && useradd -g user user && echo 'user:123456' | chpasswd
 USER user
 WORKDIR /home/user
-RUN /opt/tools/env-setup.sh user
+#RUN /opt/tools/env-setup.sh user
 
 #can be replaced by -it when init
 CMD source /opt/tools/docker-prompt
