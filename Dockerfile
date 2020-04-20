@@ -10,11 +10,12 @@ ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-amd64
 ENV PATH "${PATH}:${JAVA_HOME}/bin"
 
 COPY tools /opt/tools
+RUN /opt/tools/env-setup.sh root
 
 RUN groupadd user && useradd -g user user && echo 'user:123456' | chpasswd
 USER user
 WORKDIR /home/user
-RUN /opt/tools/env-setup.sh
+RUN /opt/tools/env-setup.sh user
 
 #can be replaced by -it when init
 CMD source /opt/tools/docker-prompt
