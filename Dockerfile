@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 # Install required tools
 RUN apt-get update -yqq && apt-get install -y \
-  curl git openjdk-8-jdk wget unzip vim python3 python3-setuptools ssh \
+  curl git openjdk-8-jdk wget unzip vim ssh build-essential \
   && apt-get clean && apt-get autoremove -yqq
 
 ENV EDITOR vim
@@ -12,6 +12,8 @@ ENV PATH "${PATH}:${JAVA_HOME}/bin"
 COPY tools /opt/tools
 WORKDIR /root
 RUN /opt/tools/env-setup.sh
+
+WORKDIR /root
 
 #can be replaced by -it when init
 CMD source /opt/tools/docker-prompt
