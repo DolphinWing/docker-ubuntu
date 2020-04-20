@@ -11,7 +11,7 @@ This imange has install below packages.
 
 To run with latest image
 ```
-sudo docker run -it dolphinwing/ubuntu
+sudo docker run -it dolphinwing/ubuntu bash
 ```
 
 Future work: use tag for different ubuntu version.
