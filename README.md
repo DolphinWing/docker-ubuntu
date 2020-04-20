@@ -3,11 +3,11 @@ My customized ubuntu image for personal use.
 
 This imange has install below packages.
 * git
-* openjdk-8-jdk
-* unzip
 * vim
 * ssh
-* build-essential
+* wget
+* curl
+* unzip
 
 To run with latest image
 ```

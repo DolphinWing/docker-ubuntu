@@ -9,7 +9,7 @@ RUN /opt/tools/env-setup.sh root
 
 # Install required tools
 RUN apt-get update -yqq && apt-get install -y \
-  sudo git openjdk-8-jdk wget curl unzip vim ssh build-essential \
+  sudo git wget curl unzip vim ssh \
   && apt list --upgradable && apt upgrade -yqq \
   && apt-get clean && apt-get autoremove -yqq
 
