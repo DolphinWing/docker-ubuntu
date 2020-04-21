@@ -10,8 +10,8 @@ RUN /opt/tools/env-setup.sh root
 # Install required tools
 RUN apt-get update -yqq && apt-get install -y \
   sudo git wget curl unzip vim ssh \
-  && apt list --upgradable && apt upgrade -yqq \
   && apt-get clean && apt-get autoremove -yqq
+#  && apt list --upgradable && apt upgrade -yqq \
 
 # https://stackoverflow.com/a/25908200/2673859
 RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
