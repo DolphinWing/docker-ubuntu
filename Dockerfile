@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 ENV EDITOR vim
-ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-amd64
+#ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-amd64
 ENV PATH "${PATH}:${JAVA_HOME}/bin"
 
 COPY tools /opt/tools
